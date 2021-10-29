@@ -61,7 +61,7 @@ def rename_files(directory, new_name_func, dry_run):
     for file_name in os.listdir(directory):
         old_file_path = os.path.join(directory, file_name)
         if os.path.isdir(old_file_path):
-            rename_files(old_file_path, new_name_func)
+            rename_files(old_file_path, new_name_func, dry_run)
 
         new_file_name = new_name_func(file_name)
         if new_file_name != file_name:
